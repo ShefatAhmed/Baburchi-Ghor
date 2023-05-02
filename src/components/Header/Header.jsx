@@ -2,36 +2,32 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
-    const styles = {
-        backgroundColor: '#e2ded3',
-    };
     return (
-        <div style={styles}>
-            <div>
-                <div className="navbar">
-                    <div className="flex-1">
-                        <p className=" btn btn-ghost normal-case text-xl">
-                            Khadok.ViPERS
-                        </p>
+        <div>
+            <nav className="navbar navbar-expand-lg bg-secondary-subtle py-1 rounded-pill ">
+                <div className="container-fluid mx-5">
+                    <Link className="navbar-brand fw-bold text-xl fs-1">Khadok.ViPERS</Link>
+                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span className="navbar-toggler-icon"></span>
+                    </button>
+                    <div className="collapse navbar-collapse " id="navbarSupportedContent">
+                        <ul className="navbar-nav me-auto mb-2 mb-lg-0 mx-auto gap-5">
+                            <li className="nav-item">
+                                <Link className="nav-link fs-5" to="/">Home</Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link className="nav-link fs-5" to="/blog">Blog</Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link className="nav-link fs-5" to="/blog">Blog</Link>
+                            </li>
+                        </ul>
                         <div>
-                        </div>
-                        <div className='text-center mx-auto g-5 text-pink-700'>
-                            <Link className='ms-8 text-center btn btn-ghost  font-extrabold'>Home</Link>
-                            <Link to="/blog" className='ms-8 text-center btn btn-ghost  font-extrabold'>Blog</Link>
-                            <Link className='ms-8 text-center btn btn-ghost  font-extrabold'>Home</Link>
-                        </div>
-                    </div>
-                    <div className="flex-none">
-                        <div>
-                            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                                <div className="w-10 rounded-full">
-                                    <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-                                </div>
-                            </label>
+                            <img src="..." class="rounded-circle" alt="..." />
                         </div>
                     </div>
                 </div>
-            </div>
+            </nav>
         </div>
     );
 };
