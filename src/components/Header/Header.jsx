@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Header = () => {
     return (
         <div>
-            <nav className="navbar navbar-expand-lg bg-secondary-subtle py-1 rounded-pill mt-2">
+            <nav className="navbar navbar-expand-lg bg-warning-subtle bg-opacity-50 py-1 rounded mx-2 mt-2">
                 <div className="container-fluid mx-5">
                     <Link className="navbar-brand fw-bold text-xl fs-1">Khadok.ViPERS</Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -18,12 +18,9 @@ const Header = () => {
                             <li className="nav-item">
                                 <Link className="nav-link fs-5" to="/blog">Blog</Link>
                             </li>
-                            <li className="nav-item">
-                                <Link className="nav-link fs-5" to="/blog">Blog</Link>
-                            </li>
                         </ul>
                         <div>
-                            <img src="..." class="rounded-circle" alt="..." />
+                            <img src="..." className="rounded-circle" alt="..." />
                         </div>
                     </div>
                 </div>
