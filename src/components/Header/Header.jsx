@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Header = () => {
     return (
         <div>
-            <nav className="navbar navbar-expand-lg bg-secondary-subtle py-1 rounded-pill ">
+            <nav className="navbar navbar-expand-lg bg-secondary-subtle py-1 rounded-pill mt-2">
                 <div className="container-fluid mx-5">
                     <Link className="navbar-brand fw-bold text-xl fs-1">Khadok.ViPERS</Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

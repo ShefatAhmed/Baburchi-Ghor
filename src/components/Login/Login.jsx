@@ -1,37 +1,34 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
     return (
         <div>
-            <div className="hero min-h-screen bg-base-200">
-                <div className="hero-content flex-col flex-row-reverse">
-                    <div className="text-center text-left">
-                        <h1 className="text-5xl font-bold">Login now!</h1>
-                    </div>
-                    <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                        <div className="card-body">
-                            <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text">Email</span>
-                                </label>
-                                <input type="text" placeholder="email" className="input input-bordered" />
-                            </div>
-                            <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text">Password</span>
-                                </label>
-                                <input type="text" placeholder="password" className="input input-bordered" />
-                                <label className="label">
-                                    <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-                                </label>
-                            </div>
-                            <div className="form-control mt-6">
-                                <button className="btn btn-primary">Login</button>
+            <section>
+                <div className="container mt-5 pt-5">
+                    <div className="row ">
+                        <div className="col-12 col-sm-7 col-md-6 m-auto">
+                            <div className="card border-0 shadow">
+                                <div className="card-body  py-5">
+                                    <p className='text-center fs-1 fw-bold'>Please Login!!</p>
+                                    <form action="">
+                                        <input type="email" name="" id="" className="form-control my-4 py-2" placeholder="Enter your email" />
+                                        <input type="password" name="" id="" className="form-control my-4 py-2" placeholder="Password" />
+                                        <div className="text-center mt-3">
+                                            <button className="btn btn-primary px-5 ">Login</button>
+                                        </div>
+                                        <div className="text-center my-2">
+                                            <Link to="/register" >
+                                                don’t have an account? Register here
+                                            </Link>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
         </div>
     );
 };
