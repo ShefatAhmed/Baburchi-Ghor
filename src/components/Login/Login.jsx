@@ -1,7 +1,61 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext, useRef, useState } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../AuthProvider';
+import { GithubAuthProvider, GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
+import app from '../../firebase/firebase.config';
 
 const Login = () => {
+    // const [show, setShow] = useState(false);
+    const { signIn } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
+    
+
+    const handleLogin = event => {
+        event.preventDefault();
+
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        signIn(email, password)
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser);
+                form.reset();
+                navigate(from, { replace: true })
+            })
+            .catch(error => {
+                console.log(error);
+            })
+    }
+
+    // google
+    
+    const popupAuth = getAuth(app);
+    const googleProvider = new GoogleAuthProvider();
+    const handleGoogleSignIn = () => {
+        signInWithPopup(popupAuth, googleProvider)
+        .then(result => {
+            const user = result.user;
+            navigate(from, { replace: true })
+        })
+        .catch(error => {
+            console.log(error);
+        })
+    } 
+    // github
+    const githubProvider = new GithubAuthProvider();
+    const handleGithublogin = () => {
+        signInWithPopup(popupAuth, githubProvider)
+        .then(result => {
+            const user = result.user;
+            navigate(from, { replace: true })
+        })
+        .catch(error => {
+            console.log(error);
+        })
+    }
     return (
         <div>
             <section>
@@ -11,9 +65,9 @@ const Login = () => {
                             <div className="card border-0 shadow">
                                 <div className="card-body  pt-5">
                                     <p className='text-center fs-1 fw-bold'>Please Login!!</p>
-                                    <form action="">
-                                        <input type="email" name="" id="" className="form-control my-4 py-2" placeholder="Enter your email" />
-                                        <input type="password" name="" id="" className="form-control my-4 py-2" placeholder="Password" />
+                                    <form onSubmit={handleLogin} action="">
+                                        <input type="email" name="email" id="" className="form-control my-4 py-2" placeholder="Enter your email" required />
+                                        <input type="password" name="password" id="" className="form-control my-4 py-2" placeholder="Password" />
                                         <div className="text-center mt-3">
                                             <button className="btn btn-primary px-5 ">Login</button>
                                         </div>
@@ -28,8 +82,8 @@ const Login = () => {
                                     <p className='fs-5 fw-bold'>Or</p>
                                     <hr className='mx-5' />
                                     <div className='d-flex flex-column-reverse p-4'>
-                                        <button type="button" className="btn btn-outline-success mb-2"><i class="fa-brands fa-google"></i> Sign in With Google</button>
-                                        <button type="button" className="btn btn-outline-success mb-2"><i class="fa-brands fa-github"></i> Sign in with Github</button>
+                                        <button type="button" className="btn btn-outline-success mb-2" onClick={handleGoogleSignIn} ><i className="fa-brands fa-google"></i> Sign in With Google</button>
+                                        <button type="button" className="btn btn-outline-success mb-2" onClick={handleGithublogin}><i className="fa-brands fa-github"></i> Sign in with Github</button>
                                     </div>
                                 </div>
                             </div>
