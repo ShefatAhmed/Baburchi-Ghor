@@ -34,7 +34,7 @@ const Header = () => {
                             </div>
                             <div>
                                 {
-                                    user ? (<button className="btn btn-primary px-3" onClick={handleLogout}> Log out</button>) : (<Link to="/login" className="btn btn-primary px-3">Login</Link>)
+                                    user ? (<button className="btn btn-danger px-3" onClick={handleLogout}> Log out</button>) : (<Link to="/login" className="btn btn-danger px-3">Login</Link>)
                                 }
                             </div>
                         </div>
@@ -46,3 +46,5 @@ const Header = () => {
 };
 
 export default Header;
+
+

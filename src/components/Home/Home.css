@@ -1,0 +1,6 @@
+@media screen and (max-width: 576px) {
+    .rigth-text{
+        align-items: center;
+        flex-direction: column;
+    }
+}
