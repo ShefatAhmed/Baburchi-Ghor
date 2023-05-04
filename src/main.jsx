@@ -12,6 +12,7 @@ import Blog from './components/Blog/Blog';
 import AuthProvider from './provider/AuthProvider.jsx';
 import ChefRecipes from './components/ChefRecipes/ChefRecipes.jsx';
 import PrivateRoutes from './routes/PrivateRoutes.jsx';
+import Error from './Error/Error.jsx';
 
 const router = createBrowserRouter([
   {
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
       }
     ]
   },
+  {
+    path: '*',
+    element: <Error></Error>
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(

@@ -1,6 +1,8 @@
 @media screen and (max-width: 576px) {
+    .banner-img{
+        margin-left: 25%;
+    }
     .rigth-text{
-        align-items: center;
-        flex-direction: column;
+        margin-right: 25%;
     }
 }

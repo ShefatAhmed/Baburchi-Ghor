@@ -2,8 +2,10 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
 
+
 const Header = () => {
     const { user, logOut } = useContext(AuthContext);
+    console.log(user);
     const handleLogout = () => {
         logOut()
             .then(result => { })
@@ -13,7 +15,7 @@ const Header = () => {
         <div>
             <nav className="navbar navbar-expand-lg bg-warning-subtle bg-opacity-50 py-1 rounded">
                 <div className="container-fluid mx-5">
-                    <Link className="navbar-brand fw-bold text-xl fs-1">Khadok.ViPERS</Link>
+                    <Link className="navbar-brand fw-bold text-xl fs-1 fst-italic"><span className='text-danger'>Baburchi</span>Ghor</Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
@@ -29,7 +31,7 @@ const Header = () => {
                         <div className='d-flex align-items-center'>
                             <div>
                                 {
-                                    user && (<img src={user.photoURL} className="rounded-circle me-3" width="40px" alt="..." />)
+                                    user && <img src={user.photoURL} className="rounded-circle me-3" width="40px" alt="..." />
                                 }
                             </div>
                             <div>
