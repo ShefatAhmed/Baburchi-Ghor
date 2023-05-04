@@ -5,8 +5,7 @@ import { GithubAuthProvider, GoogleAuthProvider, getAuth, signInWithPopup } from
 import app from '../../firebase/firebase.config';
 
 const Login = () => {
-    // const [show, setShow] = useState(false);
-    const { signIn} = useContext(AuthContext);
+    const { signIn , signInWithGoogle, signInWithGithub} = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
     console.log(location);
@@ -30,29 +29,25 @@ const Login = () => {
     }
 
     // google
-    
-    const popupAuth = getAuth(app);
-    const googleProvider = new GoogleAuthProvider();
+
     const handleGoogleSignIn = () => {
-        signInWithPopup(popupAuth, googleProvider)
+        signInWithGoogle()
         .then(result => {
-            const user = result.user;
-            navigate(from, { replace: true })
+            const loggedUser = result.user;
+            console.log(loggedUser);
         })
         .catch(error => {
-            console.log(error);
+            console.log(error)
         })
-    } 
-    // github
-    const githubProvider = new GithubAuthProvider();
+    }
     const handleGithublogin = () => {
-        signInWithPopup(popupAuth, githubProvider)
+        signInWithGithub()
         .then(result => {
-            const user = result.user;
-            navigate(from, { replace: true })
+            const loggedUser = result.user;
+            console.log(loggedUser);
         })
         .catch(error => {
-            console.log(error);
+            console.log(error)
         })
     }
     return (
