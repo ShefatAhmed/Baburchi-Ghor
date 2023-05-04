@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Home = () => {
     const [data, setData] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:3000/data')
+        fetch('https://chef-recipe-serverside-shefatahmed.vercel.app/data')
             .then(res => res.json())
             .then(data => setData(data))
             .catch(error => console.log(error))
