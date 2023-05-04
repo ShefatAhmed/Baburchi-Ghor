@@ -20,7 +20,6 @@ const Register = () => {
                 const loggedUser = result.user;
                 form.reset();
                 setError('')
-                console.log(loggedUser)
                 setSuccess('user has created successfully')
                 updateUserData(result.user, name , Img);
             })
