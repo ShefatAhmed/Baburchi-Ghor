@@ -7,7 +7,7 @@ const Home = () => {
         fetch('https://chef-recipe-serverside-shefatahmed.vercel.app/data')
             .then(res => res.json())
             .then(data => setData(data))
-            .catch(error => console.log(error))
+            .catch(error => console.log(error));
     }, [])
     return (
         <div>
@@ -50,7 +50,7 @@ const Home = () => {
                     {
                         data.map(data => <div key={data.id} className="col">
                             <div className="card">
-                                <img src={data.img} className="card-img-top" alt="..." />
+                                <img src={data.img} className="card-img-top p-5" alt="..." />
                                 <div className="card-body">
                                     <h5 className="card-title">{data.name}</h5>
                                     <p className="card-text"></p>

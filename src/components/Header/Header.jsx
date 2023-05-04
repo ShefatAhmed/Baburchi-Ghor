@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
+import ActiveLink from '../ActiveLink/ActiveLink';
 
 
 const Header = () => {
@@ -21,10 +22,10 @@ const Header = () => {
                     <div className="collapse navbar-collapse " id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
                             <li className="nav-item">
-                                <Link className="nav-link fs-5" to="/">Home</Link>
+                                <ActiveLink className="nav-link fs-5" to="/">Home</ActiveLink>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link fs-5" to="/blog">Blog</Link>
+                                <ActiveLink className="nav-link fs-5" to="/blog">Blog</ActiveLink>
                             </li>
                         </ul>
                         <div className='d-flex align-items-center'>

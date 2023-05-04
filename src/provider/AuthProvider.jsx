@@ -18,12 +18,15 @@ const AuthProvider = ({children}) => {
         return signInWithEmailAndPassword(auth , email, password)
     };
     const logOut = () => {
+        setLoading(true);
         return signOut(auth);
     }
     const signInWithGoogle = () =>{
+        setLoading(true);
         return signInWithPopup(auth, googleAuthProvider);
     }
     const signInWithGithub = () =>{
+        setLoading(true);
         return signInWithPopup(auth, githubProvider);
     }
     useEffect( ()=>{
@@ -37,6 +40,7 @@ const AuthProvider = ({children}) => {
     }, [])
     const authInfo = {
         user,
+        loading,
         createuser,
         signIn,
         logOut,
