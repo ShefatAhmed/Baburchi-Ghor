@@ -1,6 +1,12 @@
+import jsPDF from 'jspdf';
 import React from 'react';
 
 const Blog = () => {
+    function generatePDF() {
+        const doc = new jsPDF();
+        doc.text('The blog page show the 4 qus and his answer. It was a bonus marks projects.', 10, 10);
+        doc.save('myPDF.pdf');
+      }
     return (
         <div className='text-center p-5'>
             <div className='bg-info-subtle p-3'>
@@ -23,6 +29,7 @@ const Blog = () => {
                 <p className='p-3'>A custom hook is a reusable function that encapsulates complex logic in a React component. It helps to abstract and simplify logic, making it easier to maintain and reuse code. You can create a custom hook to share logic between different components.
                 </p>
             </div>
+            <button className='btn btn-danger mt-5' onClick={generatePDF}>Download PDF</button>
         </div>
     );
 };
