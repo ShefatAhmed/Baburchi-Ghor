@@ -9,7 +9,9 @@ import Home from './components/Home/Home';
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
 import Blog from './components/Blog/Blog';
-import AuthProvider from './components/AuthProvider.jsx';
+import AuthProvider from './provider/AuthProvider.jsx';
+import ChefRecipes from './components/ChefRecipes/ChefRecipes.jsx';
+import PrivateRoutes from './routes/PrivateRoutes.jsx';
 
 const router = createBrowserRouter([
   {
@@ -31,6 +33,11 @@ const router = createBrowserRouter([
       {
         path: "/blog",
         element: <Blog></Blog>
+      },
+      {
+        path: "/chefrecipes/:id",
+        element: <PrivateRoutes><ChefRecipes></ChefRecipes></PrivateRoutes>,
+        loader: ({params}) => fetch(`http://localhost:3000/data/${params.id}`)
       }
     ]
   },

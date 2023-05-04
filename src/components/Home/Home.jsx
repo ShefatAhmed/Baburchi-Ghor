@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './Home.css';
+import { Link } from 'react-router-dom';
 const Home = () => {
     const [data, setData] = useState([]);
     useEffect(() => {
@@ -59,9 +60,7 @@ const Home = () => {
                                         <p>Total Recipe: {data.numberOf_recipe}</p>
                                         <p><i className="fa-regular fa-thumbs-up"></i> {data.like}</p>
                                     </div>
-                                    <button className='btn btn-danger w-100'>
-                                        View Recipes
-                                    </button>
+                                        <Link to={`/chefrecipes/${data.id}`}>View Recipes</Link>
                                 </div>
                             </div>
                         </div>

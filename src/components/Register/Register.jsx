@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { AuthContext } from '../AuthProvider';
+import { AuthContext } from '../../provider/AuthProvider';
 import { updateProfile } from 'firebase/auth';
 
 const Register = () => {

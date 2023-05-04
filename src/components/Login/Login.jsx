@@ -1,17 +1,16 @@
 import React, { useContext, useRef, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { AuthContext } from '../AuthProvider';
+import { AuthContext } from '../../provider/AuthProvider';
 import { GithubAuthProvider, GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
 import app from '../../firebase/firebase.config';
 
 const Login = () => {
     // const [show, setShow] = useState(false);
-    const { signIn } = useContext(AuthContext);
+    const { signIn} = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
+    console.log(location);
     const from = location.state?.from?.pathname || '/';
-    
-
     const handleLogin = event => {
         event.preventDefault();
 
