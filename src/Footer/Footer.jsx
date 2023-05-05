@@ -8,7 +8,7 @@ const Footer = () => {
             <footer className="bg-warning-subtle mt-5 py-2">
                 <Container>
                     <section className="container py-5">
-                        <div className="row row-cols-4 row-cols-md-3">
+                        <div className="row row-cols-2 row-cols-md-3">
                             <div className="col">
                                 <h1 className='fw-bold'><span className='text-danger'>Baburchi</span>Ghor</h1>
                                 <p className="fw-semibold">As a catering service provider, our responsibilities include ensuring the quality and safety of the food we serve, timely delivery, and excellent customer service. We prioritize meeting dietary restrictions and preferences while accommodating special requests.</p>
@@ -27,6 +27,7 @@ const Footer = () => {
                                     <p>Email: BaburchiGhor@gmail.com</p>
                                     <p>Phone: +8801002485622</p>
                                     <p>Address: 24/7 taltola, kathalganj, Bangladesh</p>
+                                    <p>(Available : Sat - Thu, 10:00 AM to 7:00 PM)</p>
                                 </div>
                             </div>
                         </div>
