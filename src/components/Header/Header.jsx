@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
 import ActiveLink from '../ActiveLink/ActiveLink';
@@ -11,6 +11,15 @@ const Header = () => {
             .then(result => { })
             .catch(error => console.error(error));
     }
+    const [hover, setHover] = useState(false);
+
+  const handleMouseEnter = () => {
+    setHover(true);
+  };
+
+  const handleMouseLeave = () => {
+    setHover(false);
+  };
     return (
         <div>
             <nav className="navbar navbar-expand-lg bg-warning-subtle bg-opacity-50 py-1 rounded">
@@ -30,8 +39,32 @@ const Header = () => {
                         </ul>
                         <div className='d-flex align-items-center'>
                             <div>
-                                {
+                                {/* {
                                     user && <img src={user.photoURL} className="rounded-circle me-3" width="40px" alt="..." />
+                                } */}
+                                {
+                                    user && <div
+                                    onMouseEnter={handleMouseEnter}
+                                    onMouseLeave={handleMouseLeave}
+                                    style={{ position: "relative" }}
+                                  >
+                                    <img src={user.photoURL} alt="Profile" className="rounded-circle me-3" width="40px" />
+                              
+                                    {hover && (
+                                      <div
+                                        style={{
+                                          position: "absolute",
+                                          transform: "translateX(-50%)",
+                                          width: "150px", 
+                                          padding: "5px",
+                                          borderRadius: "5px",
+                                          boxShadow: "0px 1px 3px rgba(0, 0, 0, 0.3)",
+                                        }}
+                                      >
+                                        {user.displayName}
+                                      </div>
+                                    )}
+                                  </div>
                                 }
                             </div>
                             <div>
